@@ -1,0 +1,13 @@
+<div class="page-container">
+  <h1>Parking Lot</h1>
+  <div class="page-content">
+    <div class="list">
+      <app-slot-card 
+        *ngFor="let slot of slotService.slots" 
+        [slot]="slot"
+        [log]="getLogForSlot(slot)"
+      ></app-slot-card>
+    </div>
+    <app-add-log-form (newLog)="handleNewLog($event)"></app-add-log-form>
+  </div>
+</div>

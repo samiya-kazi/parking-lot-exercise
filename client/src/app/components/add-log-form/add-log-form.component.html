@@ -1,0 +1,18 @@
+<form [formGroup]="addLogForm" (ngSubmit)="handleSubmit()">
+  <h2>Add Parking Log</h2>
+  <div>
+    <label for="license">License:</label>
+    <input formControlName="license" name="license" id="license" />
+  </div>
+
+  <div>
+    <label for="license">Slot:</label>
+    <select formControlName="slot">
+      <option *ngFor="let slot of slotService.slots" [value]="slot">{{parseSlotName(slot)}}</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="isButtonDisabled()">Check In</button>
+
+  <div *ngIf="error.length">{{error}}</div>
+</form>

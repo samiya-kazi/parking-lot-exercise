@@ -1,0 +1,17 @@
+.page-container {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-content {
+  width: 100%;
+  display: flex;
+}
+
+.list {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content max-content;
+}
