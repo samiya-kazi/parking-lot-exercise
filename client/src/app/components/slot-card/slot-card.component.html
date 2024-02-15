@@ -1,4 +1,7 @@
 <div class="slot-card">
   <h4>{{parseSlotName(slot)}}</h4>
-  <p *ngIf="log">{{log.license}}</p>
+  <div *ngIf="log">
+    <p>{{log.license}}</p>
+    <button (click)="openCheckOut()">Check Out</button>
+  </div>
 </div>

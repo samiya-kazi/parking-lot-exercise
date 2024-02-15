@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'Parking Lot';
 
   occupiedLogs: IParkingLog[] = [];
+  selectedLog?: IParkingLog;
 
   constructor (private api: ApiService, public slotService: SlotService) {}
 
@@ -27,5 +28,13 @@ export class AppComponent implements OnInit {
 
   handleNewLog(log: IParkingLog) {
     this.occupiedLogs.push(log);
+  }
+
+  selectLog (log: IParkingLog) {
+    this.selectedLog = log;
+  }
+
+  deselectLog () {
+    this.selectedLog = undefined;
   }
 }

@@ -6,8 +6,14 @@
         *ngFor="let slot of slotService.slots" 
         [slot]="slot"
         [log]="getLogForSlot(slot)"
+        (checkOutOpen)="selectLog($event)"
       ></app-slot-card>
     </div>
-    <app-add-log-form (newLog)="handleNewLog($event)"></app-add-log-form>
+
+    @if (selectedLog) {
+      <app-check-out-modal [log]="selectedLog" (cancelCheckout)="deselectLog()"></app-check-out-modal>
+    } @else {
+      <app-add-log-form (newLog)="handleNewLog($event)"></app-add-log-form>
+    }
   </div>
 </div>
