@@ -24,6 +24,6 @@ export class ApiService {
   }
 
   markLogAsCheckedOut (id: string, fee: number) {
-    return this.http.post<IParkingLog>(this.root + '/logs/check-out/' + id, { fee });
+    return this.http.put<IParkingLog>(this.root + '/logs/check-out/' + id, { fee });
   }
 }

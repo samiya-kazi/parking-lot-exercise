@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IParkingLog } from '../../interfaces/parkingLog.interface';
+import { ApiService } from '../../services/api/api.service';
 
 @Component({
   selector: 'app-check-out-modal',
@@ -10,7 +11,10 @@ export class CheckOutModalComponent implements OnInit {
   
   @Input() log!: IParkingLog;
   @Output() cancelCheckout = new EventEmitter();
+  @Output() checkOutComplete = new EventEmitter<IParkingLog>();
   fee: number = 0
+
+  constructor (private api: ApiService) {}
 
   ngOnInit(): void {
     this.calculateFee();
@@ -34,6 +38,14 @@ export class CheckOutModalComponent implements OnInit {
 
   cancel () {
     this.cancelCheckout.emit();
+  }
+
+  handleCheckout () {
+    this.api.markLogAsCheckedOut(this.log._id, this.fee).subscribe({
+      next: (data) => {
+        this.checkOutComplete.emit(data);
+      }
+    })
   }
 
 

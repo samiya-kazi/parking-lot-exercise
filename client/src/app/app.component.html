@@ -11,7 +11,7 @@
     </div>
 
     @if (selectedLog) {
-      <app-check-out-modal [log]="selectedLog" (cancelCheckout)="deselectLog()"></app-check-out-modal>
+      <app-check-out-modal [log]="selectedLog" (cancelCheckout)="deselectLog()" (checkOutComplete)="handleCheckout($event)"></app-check-out-modal>
     } @else {
       <app-add-log-form (newLog)="handleNewLog($event)"></app-add-log-form>
     }

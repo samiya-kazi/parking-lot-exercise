@@ -37,4 +37,9 @@ export class AppComponent implements OnInit {
   deselectLog () {
     this.selectedLog = undefined;
   }
+
+  handleCheckout (log: IParkingLog) {
+    this.occupiedLogs = this.occupiedLogs.filter(item => item._id !== log._id);
+    this.deselectLog();
+  }
 }
