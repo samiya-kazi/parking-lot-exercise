@@ -1,0 +1,41 @@
+form {
+  min-width: 25dvw;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #cbe9f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #c7edfc solid 1px;
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.modal-info {
+  width: 100%;
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-button {
+  padding: 0.5rem;
+  color: white;
+  background-color: rgb(49, 160, 73);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: rgb(39, 128, 58);
+  color: white;
+}
+
+.confirm-button:disabled {
+  background-color: rgb(133, 161, 139);
+  color: white;
+  cursor: not-allowed;
+}

@@ -1,7 +1,5 @@
 <div class="slot-card">
-  <h4>{{parseSlotName(slot)}}</h4>
-  <div *ngIf="log">
-    <p>{{log.license}}</p>
-    <button (click)="openCheckOut()">Check Out</button>
-  </div>
+  <p class="slot-name">{{parseSlotName(slot)}}</p>
+  <p *ngIf="log">{{log.license}}</p>
+  <button *ngIf="log" (click)="openCheckOut()">Check Out</button>
 </div>

@@ -1,0 +1,53 @@
+.modal {
+  min-width: 25dvw;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #d8cbf5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: #e3c7fc solid 1px;
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.modal-info {
+  width: 100%;
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cancel-button {
+  padding: 0.5rem;
+  background-color: rgb(236, 232, 232);
+  border: rgb(160, 160, 160) 1px solid;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: rgb(208, 207, 207);
+}
+
+.confirm-button {
+  padding: 0.5rem;
+  color: white;
+  background-color: rgb(160, 49, 49);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: rgb(128, 39, 39);
+  color: white;
+}

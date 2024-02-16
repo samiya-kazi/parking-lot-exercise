@@ -12,6 +12,10 @@
 
 .list {
   flex-grow: 1;
-  display: grid;
-  grid-template-columns: max-content max-content max-content max-content max-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin-bottom: 3rem;
 }

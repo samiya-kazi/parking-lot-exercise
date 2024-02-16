@@ -1,5 +1,31 @@
 .slot-card {
-  border: grey solid 1px;
-  padding: 2rem;
-  margin: 2rem;
+  height: 8.5rem;
+  width: 8.5rem;
+  border: rgb(169, 193, 179) solid 1px;
+  margin: 0 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-overflow: wrap;
+  overflow: hidden;
+  background-color: rgb(207, 236, 220);
+  border-radius: 1rem;
+}
+
+.slot-name {
+  margin: 0;
+  font-weight: bold;
+}
+
+button {
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: rgb(237, 93, 93);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(168, 64, 64);
 }

@@ -1,11 +1,25 @@
-<div>
+<div class="modal">
   <h2>Checking Out</h2>
-  <p>License: {{log.license}}</p>
-  <p>Slot: {{log.slot}}</p>
-  <p>Check In: {{log.checkInTimestamp}}</p>
-  <p>Fee: {{fee}}</p>
-  <div>
-    <button (click)="cancel()">Cancel</button>
-    <button (click)="handleCheckout()">Check Out</button>
+  <div class="modal-content">
+    <div class="modal-info">
+      <div><b>License:</b></div>
+      <div>{{ log.license }}</div>
+    </div>
+    <div class="modal-info">
+      <div><b>Slot:</b></div>
+      <div>{{ log.slot }}</div>
+    </div>
+    <div class="modal-info">
+      <div><b>Check In:</b></div>
+      <div>{{ log.checkInTimestamp }}</div>
+    </div>
+    <div class="modal-info">
+      <div><b>Fee:</b></div>
+      <div>{{ fee }}</div>
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="cancel-button" (click)="cancel()">Cancel</button>
+    <button class="confirm-button" (click)="handleCheckout()">Check Out</button>
   </div>
 </div>
