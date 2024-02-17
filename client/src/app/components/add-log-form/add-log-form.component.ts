@@ -53,4 +53,12 @@ export class AddLogFormComponent {
     return !this.addLogForm.valid
   }
 
+  get license () {
+    return this.addLogForm.controls.license
+  }
+
+  get slot () {
+    return this.addLogForm.controls.slot
+  }
+
 }

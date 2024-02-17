@@ -5,12 +5,22 @@
       <label for="license">License:</label>
       <input formControlName="license" name="license" id="license" />
     </div>
-  
+    <div class="input-error">
+      <div *ngIf="license.errors?.['required']">License is required.</div>
+      <div *ngIf="license.errors?.['minlength']">
+        License must be at least 5 characters long.
+      </div>
+    </div>
+    
     <div class="modal-info">
       <label for="license">Slot:</label>
       <select formControlName="slot">
         <option *ngFor="let slot of slotService.slots" [value]="slot">{{parseSlotName(slot)}}</option>
       </select>
+    </div>
+    
+    <div class="input-error">
+      <div *ngIf="slot.errors?.['required']">Slot must be selected.</div>
     </div>
   </div>
 

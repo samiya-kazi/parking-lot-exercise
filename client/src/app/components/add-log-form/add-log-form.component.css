@@ -6,7 +6,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: #c7edfc solid 1px;
+  border: #90c0d3 solid 1px;
 }
 
 .modal-content {
@@ -20,8 +20,22 @@ form {
   justify-content: space-between;
 }
 
+.modal-info > input, select {
+  width: 15rem;
+  padding: 0.25rem;
+}
+
+.input-error {
+  display: flex;
+  justify-content: flex-end;
+  color: red;
+  font-size: small;
+  height: 2rem;
+}
+
 .confirm-button {
   padding: 0.5rem;
+  margin-top: 1rem;
   color: white;
   background-color: rgb(49, 160, 73);
   border: none;
