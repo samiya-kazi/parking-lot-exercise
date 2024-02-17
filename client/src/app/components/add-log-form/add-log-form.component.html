@@ -16,5 +16,6 @@
 
   <button class="confirm-button" type="submit" [disabled]="isButtonDisabled()">Check In</button>
 
-  <div *ngIf="error.length">{{error}}</div>
+  <div class="error-message" *ngIf="error.length">{{error}}</div>
+
 </form>
