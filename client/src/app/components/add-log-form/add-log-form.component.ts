@@ -3,6 +3,7 @@ import { SlotService } from '../../services/slot/slot.service';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api/api.service';
 import { IParkingLog } from '../../interfaces/parkingLog.interface';
+import { OccupiedLogsService } from '../../services/occupied-logs/occupied-logs.service';
 
 @Component({
   selector: 'app-add-log-form',
@@ -23,7 +24,8 @@ export class AddLogFormComponent {
   constructor(
     public slotService: SlotService, 
     private fb: FormBuilder,
-    private api: ApiService
+    private api: ApiService,
+    private occupiedService: OccupiedLogsService
   ) {}
 
   handleSubmit () {
@@ -42,7 +44,6 @@ export class AddLogFormComponent {
         }
       })
     }
-    console.log(this.addLogForm.value);
   }
 
   parseSlotName (slot: string) {
@@ -61,4 +62,7 @@ export class AddLogFormComponent {
     return this.addLogForm.controls.slot
   }
 
+  isSlotOccupied(slot: string) {
+    return !!this.occupiedService.occupiedLogs.find(log => log.slot === slot);
+  }
 }

@@ -48,5 +48,18 @@ export class CheckOutModalComponent implements OnInit {
     })
   }
 
+  get currentTime () {
+    return new Date();
+  }
+
+  get totalDurationInMilliseconds () {
+    const duration = Date.now() - new Date(this.log.checkInTimestamp).getTime();
+    const minutes = Math.floor(duration / (1000 * 60));
+    const hours = Math.floor(minutes / 60);
+
+    if (hours) return `${hours} hours, ${minutes - (hours * 60)} minutes`;
+    else return `${minutes} minutes`
+  }
+
 
 }

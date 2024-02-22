@@ -11,7 +11,15 @@
     </div>
     <div class="modal-info">
       <div><b>Check In:</b></div>
-      <div>{{ log.checkInTimestamp }}</div>
+      <div>{{ log.checkInTimestamp | date : 'dd MMM yyyy, hh:mm:ss aa' }}</div>
+    </div>
+    <div class="modal-info">
+      <div><b>Check Out:</b></div>
+      <div>{{ currentTime | date : 'dd MMM yyyy, hh:mm:ss aa' }}</div>
+    </div>
+    <div class="modal-info">
+      <div><b>Duration:</b></div>
+      <div>{{ totalDurationInMilliseconds }}</div>
     </div>
     <div class="modal-info">
       <div><b>Fee:</b></div>

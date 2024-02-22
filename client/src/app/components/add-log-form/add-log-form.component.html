@@ -15,7 +15,7 @@
     <div class="modal-info">
       <label for="license">Slot:</label>
       <select formControlName="slot">
-        <option *ngFor="let slot of slotService.slots" [value]="slot">{{parseSlotName(slot)}}</option>
+        <option *ngFor="let slot of slotService.slots" [value]="slot" [disabled]="isSlotOccupied(slot)">{{parseSlotName(slot)}}</option>
       </select>
     </div>
     

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IParkingLog } from './interfaces/parkingLog.interface';
 import { ApiService } from './services/api/api.service';
 import { SlotService } from './services/slot/slot.service';
+import { OccupiedLogsService } from './services/occupied-logs/occupied-logs.service';
 
 @Component({
   selector: 'app-root',
@@ -10,24 +11,22 @@ import { SlotService } from './services/slot/slot.service';
 })
 export class AppComponent implements OnInit {
   title = 'Parking Lot';
-
-  occupiedLogs: IParkingLog[] = [];
   selectedLog?: IParkingLog;
 
-  constructor (private api: ApiService, public slotService: SlotService) {}
+  constructor (private api: ApiService, public slotService: SlotService, private occupiedService: OccupiedLogsService) {}
 
   ngOnInit(): void {
     this.api.getAllOccupiedSlots().subscribe({
-      next: (data) => this.occupiedLogs = data
+      next: (data) => this.occupiedService.occupiedLogs = data
     });
   }
 
   getLogForSlot(slot: string) {
-    return this.occupiedLogs.find(log => log.slot === slot);
+    return this.occupiedService.occupiedLogs.find(log => log.slot === slot);
   }
 
   handleNewLog(log: IParkingLog) {
-    this.occupiedLogs.push(log);
+    this.occupiedService.occupiedLogs.push(log);
   }
 
   selectLog (log: IParkingLog) {
@@ -39,7 +38,7 @@ export class AppComponent implements OnInit {
   }
 
   handleCheckout (log: IParkingLog) {
-    this.occupiedLogs = this.occupiedLogs.filter(item => item._id !== log._id);
+    this.occupiedService.occupiedLogs = this.occupiedService.occupiedLogs.filter(item => item._id !== log._id);
     this.deselectLog();
   }
 }
